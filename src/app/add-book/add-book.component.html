@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode=='java'">
+        <a (click)="viewMode='java'" style="padding-left: 10px;">
+            <img class="sliderImg lozad" alt="Java Programming for Beginners: Learn the fundamentals of programming with Java - Mark Lassoff" title="Java Programming for Beginners: Learn the fundamentals of programming with Java - Mark Lassoff" data-src="https://www.storytel.com/images/e/200x200/0002542232.jpg" src="https://www.storytel.com/images/e/200x200/0002542232.jpg" data-loaded="true">
+        </a>
+    </li>
+
+    <li [class.active]="viewMode=='javasript'">
+        <a (click)="viewMode='javasript'" style="padding-left: 20px;">
+            <img class="sliderImg lozad" alt="Professional JavaScript: Fast-track your web development career using the powerful features of advanced JavaScript - Philip Kirkbride, Siyuan Gao, Hugo Di Francesco, Vinicius Isola" title="Professional JavaScript: Fast-track your web development career using the powerful features of advanced JavaScript - Philip Kirkbride, Siyuan Gao, Hugo Di Francesco, Vinicius Isola" data-src="https://www.storytel.com/images/e/200x200/0002412067.jpg" src="https://www.storytel.com/images/e/200x200/0002412067.jpg" data-loaded="true">
+        </a>
+    </li>
+</ul>
+
+
+<br>
+
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'java'">
+        
+<div class="container border border-dark">
+    <br>
+    <div class="row">
+      <div class="col-sm-8">
+        <ul class="list-group border border-dark">
+            <li class="list-group-item">
+                <img class="sliderImg lozad" alt="Java Programming for Beginners: Learn the fundamentals of programming with Java - Mark Lassoff" title="Java Programming for Beginners: Learn the fundamentals of programming with Java - Mark Lassoff" data-src="https://www.storytel.com/images/e/200x200/0002542232.jpg" src="https://www.storytel.com/images/e/200x200/0002542232.jpg" data-loaded="true">
+            </li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+          <ul class="list-group">
+                <li class="list-group-item border border-primary">{{bookTitle[0]}}</li>
+                <br>
+                <button class="btn btn-primary"  mat-button (click)="openDialog()">More Info</button>
+          </ul>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-group">
+            <li class="list-group-item border border-dark">ISBN   {{isbn[0]}}</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="list-group">
+            <li class="list-group-item border border-dark">${{authorPrice[0]}}</li>
+        </ul>
+      </div> 
+    </div>
+    <br>
+    </div>
+    </div>
+
+
+
+    <div *ngSwitchCase="'javasript'">
+        <div class="container border border-dark">
+            <br>
+            <div class="row">
+              <div class="col-sm-8 ">
+                <ul class="list-group border border-dark">
+                    <li class="list-group-item">
+                        <img class="sliderImg lozad" alt="Professional JavaScript: Fast-track your web development career using the powerful features of advanced JavaScript - Philip Kirkbride, Siyuan Gao, Hugo Di Francesco, Vinicius Isola" title="Professional JavaScript: Fast-track your web development career using the powerful features of advanced JavaScript - Philip Kirkbride, Siyuan Gao, Hugo Di Francesco, Vinicius Isola" data-src="https://www.storytel.com/images/e/200x200/0002412067.jpg" src="https://www.storytel.com/images/e/200x200/0002412067.jpg" data-loaded="true">
+                    </li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                  <ul class="list-group">
+                    <li class="list-group-item border border-primary">{{bookTitle[1]}}</li>
+                    <br>
+                    <button class="btn btn-primary" mat-button (click)="openDialog()">More Info</button>
+                  </ul>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-6">
+                <ul class="list-group">
+                    <li class="list-group-item border border-dark ">ISBN    {{isbn[1]}}</li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul class="list-group">
+                    <li class="list-group-item border border-dark ">${{authorPrice[1]}}</li>
+                </ul>
+              </div> 
+            </div>
+            <br>
+            </div>
+    </div>
+    <div *ngSwitchDefault>Your not selecting anythig.</div>
+</div>
+
+
